@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>60 Jahre Rotary Club Kitzbühel – Ablauf &amp; Moderationsfragen</title>
+<style>
+  :root {
+    --rotary-blue: #17458F;
+    --rotary-gold: #F7A81B;
+    --bg: #FAFAF7;
+    --card: #FFFFFF;
+    --ink: #1F2937;
+    --muted: #6B7280;
+    --line: #E5E7EB;
+    --then: #B45309;
+    --now: #047857;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
+  header {
+    background: linear-gradient(135deg, var(--rotary-blue), #1E5BC6);
+    color: white;
+    padding: 56px 24px 48px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  header h1 { margin: 0; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; }
+  header .motto { font-style: italic; opacity: 0.92; margin-top: 8px; font-size: 1.25rem; }
+  header .meta { margin-top: 20px; font-size: 1rem; opacity: 0.88; }
+  header .meta span { display: inline-block; margin: 0 12px; }
+  .nav {
+    position: sticky; top: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 0;
+    z-index: 10;
+    margin-bottom: 24px;
+  }
+  .nav-inner { max-width: 920px; margin: 0 auto; padding: 0 24px; display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.9rem; }
+  .nav a { color: var(--rotary-blue); text-decoration: none; font-weight: 500; }
+  .nav a:hover { text-decoration: underline; }
+  .block {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  }
+  .block.project { }
+  .time { color: var(--rotary-blue); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; display: inline; margin-right: 14px; }
+  .title { font-size: 1.35rem; font-weight: 700; margin: 4px 0 12px; color: var(--ink); display: inline; }
+  .block > .title { display: inline-block; margin: 0; }
+  .block > .time + .title { margin-left: 8px; }
+  .block > .time, .block > .title { line-height: 1.4; }
+  .block > .who { display: block; margin-top: 6px; }
+  .who { color: var(--muted); font-size: 0.95rem; margin-bottom: 8px; }
+  .einstieg {
+    background: #F4F7FB;
+    border-left: 3px solid var(--rotary-gold);
+    padding: 10px 14px;
+    margin: 12px 0 18px;
+    font-style: italic;
+    color: #374151;
+    border-radius: 4px;
+  }
+  .speaker { margin: 18px 0; }
+  .speaker-name {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge.then { background: #FEF3C7; color: var(--then); }
+  .badge.now  { background: #D1FAE5; color: var(--now); }
+  .badge.both { background: #DBEAFE; color: #1E40AF; }
+  .role { color: var(--muted); font-size: 0.9rem; font-weight: 400; }
+  .questions { margin: 6px 0 0 0; padding-left: 22px; }
+  .questions li { margin: 6px 0; color: #374151; }
+  .ankuendigung {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: #F9FAFB;
+    border-left: 3px solid var(--rotary-blue);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #1F2937;
+  }
+  .ankuendigung .label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--rotary-blue);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .ankuendigung .speech { font-style: italic; }
+  .folien {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #E8F1E5;
+    border-left: 3px solid #5A8E55;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #1F2937;
+  }
+  .folien .label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2F6E2A;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .folien ol, .folien ul {
+    margin: 4px 0 0 0;
+    padding-left: 22px;
+  }
+  .folien li {
+    margin: 4px 0;
+  }
+  .ankuendigung.hand-off {
+    background: #FEF3C7;
+    border-left-color: var(--rotary-gold);
+  }
+  .ankuendigung.hand-off .label { color: #92400E; }
+  .uebergang-out {
+    margin: 16px 0 8px;
+    padding: 14px 18px;
+    background: #EEF4FB;
+    border-left: 3px solid var(--rotary-blue);
+    border-radius: 6px;
+    color: #1F2937;
+  }
+  .uebergang-out .label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--rotary-blue);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .uebergang-out .speech { font-style: italic; }
+  .section-header {
+    font-size: 1.6rem;
+    color: var(--rotary-blue);
+    font-weight: 800;
+    margin: 36px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--rotary-blue);
+  }
+  .notfall {
+    background: #FFF7E6;
+    border: 1px solid #FCD34D;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 18px 0;
+  }
+  .notfall h3 { margin: 0 0 10px; color: #92400E; }
+  .notfall ul { margin: 0; padding-left: 22px; }
+  .notfall li { margin: 6px 0; color: #5C2E04; }
+  .legend {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    margin: 16px 0 24px; font-size: 0.85rem; color: var(--muted);
+  }
+  .legend .item { display: inline-flex; align-items: center; gap: 6px; }
+  footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  @media print {
+    .nav { display: none; }
+    .block { break-inside: avoid; box-shadow: none; border: 1px solid #DDD; }
+    header { background: var(--rotary-blue) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  .person {
+    color: #C8102E;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<header>
+<h1>60 Jahre Rotary Club Kitzbühel</h1>
+<div class="motto">„Geschichte, die wirkt."</div>
+<div class="meta">
+<span>📅 Donnerstag, 21. Mai 2026</span>
+<span>📍 Rasmushof – Hermann-Reisch-Saal</span>
+<span>🕡 Ankommen 17:30 · Beginn 18:30</span>
+</div>
+<div class="meta" style="margin-top:8px;">Motto: „Old &amp; Young" – „Then &amp; Now" · Moderation: <span class="person">Christoph Holz</span></div>
+</header>
+<div class="nav">
+<div class="nav-inner">
+<a href="#ablauf">Ablauf</a>
+<a href="#projekt1">Education</a>
+<a href="#projekt2">Exchange</a>
+<a href="#projekt3">Fundraising</a>
+<a href="#projekt4">Sport</a>
+</div>
+</div>
+<div class="wrap">
+<div class="legend">
+<span class="item"><span class="badge then">Then</span> Senior / Gründergeneration</span>
+<span class="item"><span class="badge now">Now</span> Aktuelle Generation</span>
+<span class="item"><span class="badge both">Then &amp; Now</span> Beide Perspektiven</span>
+</div>
+<h2 class="section-header" id="ablauf">Ablauf</h2>
+<div class="block">
+<div class="time">17:30 – 18:30</div>
+<div class="title">Ankommen, Aperitif &amp; Vorspeisen</div>
+<div class="who">Bilder-Loop läuft (Reel 1) · Rotaract-Band spielt Background · Fingerfood</div><div class="folien"><span class="label">📊 Folie</span> <strong>Reel 1 – Dauerschleife:</strong> 120–150 Bilder aus 60 Jahren RC Kitzbühel im Loop</div>
+</div>
+<div class="block">
+<div class="time">18:30 – 18:35</div>
+<div class="title">Musikalisches Opening &amp; Opening Reel</div>
+<div class="who"><span class="person">Junko Philipp</span> – Klavier (Rotary Fanfare) · Einspieler „60 Präsidenten in 60 Sekunden" (Benetton-Stil)</div><div class="folien"><span class="label">📊 Folie</span> <strong>Reel 2:</strong> „60 Präsidenten in 60 Sekunden" (Benetton-Stil)</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Ansage aus dem Off (<span class="person">Christoph</span>)</span>
+<span class="speech">„Liebe Freundinnen und Freunde, herzlich willkommen zu 60 Jahren Rotary Club Kitzbühel. Bitte nehmt Platz. Es geht gleich los."</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">Ablauf im Block: Ansage → Fanfare (<span class="person">Junko</span>) → Reel. Reel läuft direkt nach der Fanfare, ohne Wort dazwischen.</div>
+</div>
+</div>
+<div class="block">
+<div class="time">18:35 – 18:43</div>
+<div class="title">Begrüßung &amp; Grußworte – kombiniert (Club für Club)</div>
+<div class="who"><span class="person">Hedy Bendler</span> auf der Bühne stellt jeden Club einzeln vor · <span class="person">Christoph</span> mit Mikro &amp; Kameramann geht hin · ca. 8 Min.</div>
+<div class="folien"><span class="label">📊 Folie</span> <strong>Folie:</strong> Logo RC Kitzbühel + 60-Jahre-Jubiläumslogo „Geschichte, die wirkt."</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Anmoderation aus dem Off (<span class="person">Christoph</span>)</span>
+<span class="speech">„Bitte begrüßt unsere Präsidentin – <span class="person">Hedy Bendler</span>."</span>
+</div>
+<div class="ankuendigung hand-off">
+<span class="label">🎙️ <span class="person">Hedy</span> – Eröffnung der Begrüßungsrunde</span>
+<span class="speech">„Liebe Freundinnen und Freunde, liebe rotarische Familie, ich freue mich von Herzen, Euch heute Abend hier im Rasmushof zu unserer 60-Jahr-Feier zu begrüßen. Ich darf Euch jetzt unsere rotarische Familie vorstellen – Mutterclub, unsere Patenkinder, und unsere Freunde. <span class="person">Christoph</span> hält das Mikro für ein kurzes Grußwort zu euch."</span>
+</div>
+<div class="ankuendigung">
+<span class="label">🔁 Schema pro Club (<span class="person">Hedy</span> stellt vor → <span class="person">Christoph</span> holt Grußwort ab)</span>
+<span class="speech">1. <strong><span class="person">Hedy</span> von der Bühne</strong> nennt Club + Bezug (Mutterclub / Patenclub / Freundesclub) + Präsident:in.<br/>
+2. <strong><span class="person">Christoph</span> geht zur Person</strong>, reicht das Mikro – Kameramann live, Leinwand-Einblendung.<br/>
+3. <strong>Grußwort</strong> max. 45–60 Sek.<br/>
+4. Kurzer Applaus, dann nächster Club.</span>
+</div>
+<div class="ankuendigung hand-off">
+<span class="label">1️⃣ Mutterclub – RC Kufstein (geht los)</span>
+<span class="speech"><strong><span class="person">Hedy</span>:</strong> „Wir beginnen mit unserem <strong>Mutterclub</strong> – dem RC Kufstein, der uns 1966 gegründet hat. Ich begrüße den/die Präsident:in [Name TODO]."<br/><br/>
+<strong><span class="person">Christoph</span></strong> → Grußwort RC Kufstein.</span>
+</div>
+<div class="ankuendigung hand-off">
+<span class="label">2️⃣ Unsere Patenkinder – RC Zell am See, RC Wörgl, Rotaract Kitzbühel</span>
+<span class="speech"><strong><span class="person">Hedy</span>:</strong> „Und mit Stolz: Wir selbst haben drei Clubs ins Leben gerufen – den RC Zell am See, den RC Wörgl und unseren Rotaract Kitzbühel. Ich begrüße der Reihe nach:"<br/><br/>
+• <strong>RC Zell am See</strong> – [Name TODO] · <span class="person">Christoph</span> → Grußwort<br/>
+• <strong>RC Wörgl</strong> – [Name TODO] · <span class="person">Christoph</span> → Grußwort<br/>
+• <strong>Rotaract Kitzbühel</strong> – [Name TODO] · <span class="person">Christoph</span> → Grußwort</span>
+</div>
+<div class="ankuendigung hand-off">
+<span class="label">3️⃣ Befreundete Clubs – RC Saalfelden, RC Lignano &amp; weitere lt. Anmeldungsliste (nur kurze Erwähnung, kein Grußwort)</span>
+<span class="speech"><strong><span class="person">Hedy</span>:</strong> „Außerdem begrüße ich noch den <strong>Rotary Club Saalfelden</strong> mit [Name TODO], den <strong>Rotary Club Lignano</strong> mit [Name TODO] – und unsere weiteren rotarischen Freunde:<br/><br/>
+• <strong>RC [Club 3]</strong> mit [Name TODO]<br/>
+• <strong>RC [Club 4]</strong> mit [Name TODO]<br/>
+• <strong>RC [Club 5]</strong> mit [Name TODO]<br/>
+<em>(Liste vor dem Abend aus der Anmeldungsliste vervollständigen)</em>"<br/><br/>
+<em>Nur namentliche Erwähnung – kein Grußwort, keine Kamera.</em></span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📋 TODO: Anmeldungsliste durchgehen, alle weiteren anwesenden Clubs + Präsident:innen-Namen hier ergänzen.</div>
+</div>
+<div class="ankuendigung hand-off">
+<span class="label">4️⃣ <span class="person">Hedy</span> – Kurze Ansprache (~2 Min) + Anmoderation beider Governors</span>
+<span class="speech"><strong>Hedys kurze Ansprache (ca. 2 Min) – Inhalt TODO:</strong><br/>
+<em style="color:var(--muted);">Vorschlag: Blick auf 60 Jahre Wirkung des Clubs, Dank an die rotarische Familie, Bogen ins Heute. Frei zu formulieren – endet mit folgendem fixen Übergang zu den Governors:</em><br/><br/>
+<strong>Fixer Abschluss der Ansprache:</strong><br/>
+„… Und jetzt möchte ich noch den <strong>Incoming Governor [Name TODO]</strong> begrüßen und den <strong>amtierenden Governor <span class="person">Gustav Oberwallner</span></strong>. Und den darf ich bitte zu mir auf die Bühne bitten."</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">Beide Governors werden begrüßt – nur der amtierende Governor (<span class="person">Gustav</span>) hält ein Grußwort und kommt auf die Bühne. Der Incoming Governor bleibt am Platz.</div>
+</div>
+<div class="ankuendigung" style="background:#FEF3C7; border-left-color:#92400E;">
+<span class="label" style="color:#92400E;">📋 TODO Namen</span>
+<span class="speech">Namen vor dem Abend klären und in die obigen Blöcke einsetzen:<br/>
+• Präsident:innen: RC Kufstein · RC Zell am See · RC Wörgl · Rotaract Kitzbühel · RC Saalfelden · RC Lignano<br/>
+• Incoming Governor (zusätzlich zu <span class="person">Gustav Oberwallner</span>)</span>
+</div>
+</div>
+<div class="block">
+<div class="time">18:43 – 18:46</div>
+<div class="title">Governor-Grußwort</div>
+<div class="who"><span class="person">Gustav Oberwallner</span> – Governor Distrikt 1920 (ca. 3 Min.)</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Keine eigene Anmoderation</span>
+<em style="color:var(--muted);">Übergabe erfolgt direkt aus <span class="person">Hedys</span> Begrüßung im vorherigen Block.</em>
+</div>
+</div>
+<div class="block project" style="border-left-color: var(--rotary-gold);">
+<div class="time">18:46 – 18:49</div>
+<div class="title">Leitmotiv – „RC Kitz in 3 Sätzen"</div>
+<div class="who"><span class="person">Christoph Holz</span> – Moderator (ca. 2–3 Min.) – jetzt erstmals selbst auf der Bühne</div><div class="folien"><span class="label">📊 Folie</span> <strong>60-Jahre-Logo + Motto „Geschichte, die wirkt."</strong> + Vier-Fragen-Probe als Eyecatcher</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Aufgang &amp; Eröffnung (<span class="person">Christoph</span>)</span>
+<span class="speech">„Vielen Dank, lieber <span class="person">Gustav</span>, für diese Worte. Mein Name ist <span class="person">Christoph Holz</span> – ich darf Euch heute Abend durch unser Programm begleiten. Drei Sätze zu dem Club, der uns hier zusammenführt:"</span>
+</div>
+<div class="einstieg" style="border-left-color: var(--rotary-blue); background:#EEF4FB; margin-top:14px;">
+<strong>Die 3 Sätze (Hauptversion – kurz &amp; sprechbar):</strong>
+<ol style="margin: 10px 0 0 18px; padding: 0;">
+<li style="margin-bottom: 14px;"><strong>Wer wir sind.</strong> „Der Rotary Club Kitzbühel – das ist seit 1966 eine Gemeinschaft von Männern, seit 2020 auch von Frauen. Wir treffen uns jeden Donnerstag im Tiefenbrunner, unserem Clublokal. Unser Motto: <em>Service Above Self</em> – selbstlos dienen."</li>
+<li style="margin-bottom: 14px;"><strong>Wie wir arbeiten.</strong> „Wir messen unser Handeln an vier Fragen: Ist es wahr? Ist es fair? Fördert es Freundschaft? Nützt es allen? Und wir übersetzen das in Projekte: Bildung. Jugendaustausch. Fundraising. Sport."</li>
+<li><strong>Worum es heute geht.</strong> „Heute zeigen wir Euch 60 Jahre dieser Wirkung – nicht als Bilanz, sondern als Generationen-Dialog. <em>Then &amp; Now. Old &amp; Young.</em>"</li>
+</ol>
+</div>
+<div class="uebergang-out">
+<span class="label">→ Übergang zum nächsten Block (Generationen-Dialog)</span>
+<span class="speech">„Wie 60 Jahre dieser Geschichte anfangen – das erzählen uns jetzt zwei Generationen. Wir haben noch ein Gründungsmitglied unter uns: <span class="person">Günther Much</span>. Und mit ihm <span class="person">Pascal Broschek</span>, Sohn eines Gründers. Bitte einen herzlichen Applaus."</span>
+</div>
+</div>
+<div class="block project">
+<div class="time">18:49 – 19:01</div>
+<div class="title">Generationen-Dialog „Then &amp; Now"</div>
+<div class="who"><span class="person">Günther Much</span> (klassisch) &amp; <span class="person">Pascal Broschek</span> (modern) · Gesprächsführung: <span class="person">Pascal</span> · inkl. „60 Jahre in 6 Minuten"</div><div class="folien"><span class="label">📊 Folie</span> <strong>Folie mit schwarzer Fläche</strong> – die Folie selbst zeigt eine reine schwarze Fläche, damit der Beamer effektiv ausblendet. <span class="person">Günther</span> und <span class="person">Pascal</span> sitzen sichtbar in der Bühnenecke – der Fokus bleibt auf ihnen, kein Folienbild ablenkend dahinter.</div>
+<div class="einstieg">
+<strong>Eröffnung – gesprochen von <span class="person">Pascal Broschek</span>:</strong>
+<p style="margin:8px 0 0; font-style:italic;">„60 Jahre Rotary Kitzbühel – das hört sich nach Statistik an. Hinter den Zahlen stehen aber Menschen. Einer davon, der das Ganze von Anfang an erlebt hat, sitzt heute hier neben mir: <span class="person">Günther Much</span> – eines unserer Gründungsmitglieder."</p>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Günther Much</span> <span class="badge then">Then</span> · <span class="person">Pascal Broschek</span> <span class="badge now">Now</span>
+<span class="role">– Generationen-Dialog · alternierend: Frage an <span class="person">Günther</span> ↔ Statement von <span class="person">Pascal</span></span>
+</div><div class="folien"><span class="label">📊 Folie</span> Bild vom Vater bzw. der Gründer-Generation / Sakko-Symbolbild</div>
+<div class="ankuendigung">
+<span class="label">🔁 Dramaturgie: Wechsel zwischen Frage an <span class="person">Günther</span> &amp; Pascals eigener Perspektive</span>
+<span class="speech">Reihenfolge wie folgt (immer abwechselnd):</span>
+</div>
+<ol class="questions" style="margin-top:10px;">
+<li><strong>Pascals Statement 1 – „Mein Vater hat gesagt …"</strong> <span style="background:#FEF3C7; color:#92400E; font-size:0.78rem; padding:2px 8px; border-radius:4px; font-weight:700; margin-left:6px;">LÜCKE – wird von Pascal nachgereicht</span><br/>
+<em style="color:var(--muted);">Original-Zitat vom Vater (Gründer-Generation), Platzhalter bis Pascal nachreicht.</em></li>
+<li><strong>Frage 1 an <span class="person">Günther</span>:</strong> <span class="person">Günther</span>, du warst dabei, als der Club entstanden ist. Was war damals 1966 die Idee – warum überhaupt Rotary in Kitzbühel?</li>
+<li><strong>Pascals Statement 2 – Das Sakko-Bild:</strong> „Wenn mein Vater am Donnerstag das Rotary-Sakko angezogen hat, war das fast wie ein kleines Ritual. Als Kind habe ich das nicht in Worte fassen können, aber gespürt: Er geht nicht einfach in einen Verein."</li>
+<li><strong>Frage 2 an <span class="person">Günther</span>:</strong> Wenn du heute in den Saal schaust: Was hätte sich der Club von 1966 nie träumen lassen – und was ist gleich geblieben?</li>
+<li><strong>Pascals Statement 3 – Der Familientisch:</strong> „Zu Hause hat er erzählt, was im Club besprochen wurde – Projekte, Menschen, manchmal auch Sorgen. Ich habe vieles nicht verstanden. Aber ich habe verstanden, dass das mehr ist als ein Treffen am Donnerstagabend."</li>
+<li><strong>Pascals Statement 4 – Der Umkipp-Moment &amp; Then &amp; Now (Abschluss):</strong> „Irgendwann habe ich gemerkt: Das ist nicht der Klub von Papa. Das geht uns alle etwas an. Und heute sitze ich selbst am Donnerstag dabei. Was <span class="person">Günther</span> aus der Gründungszeit erzählt – und was ich aus der Kindheit eines Gründersohns kenne – das ist genau der Bogen, den wir heute Abend aufmachen: <em>Then &amp; Now. Old &amp; Young.</em>"</li>
+</ol>
+<div class="ankuendigung">
+<span class="label">🎙️ Abmoderation (<span class="person">Christoph</span>)</span>
+<span class="speech">„Vielen Dank <span class="person">Günther</span>, danke <span class="person">Pascal</span> – das ist ‚Then &amp; Now' in einem Moment."</span>
+</div>
+<div class="notfall" style="background:#FFF7E6; border-color:#FCD34D;">
+<h3>🩺 Plan B – <span class="person">Günther Much</span> fällt aus (z. B. gesundheitlich)</h3>
+<p style="margin-top:0;">Wenn <span class="person">Günther</span> kurzfristig nicht dabei sein kann, übernimmt <span class="person">Christoph Holz</span> die Gesprächsführung und führt das Gespräch allein mit <span class="person">Pascal Broschek</span> – als persönliche Innensicht in die Gründergeneration. Das funktioniert sogar besser, weil es intimer wird.</p>
+<p><strong>Eröffnung dann durch <span class="person">Christoph</span>:</strong></p>
+<p style="font-style:italic; color:#5C2E04;">„<span class="person">Günther Much</span>, eines unserer Gründungsmitglieder, kann heute leider nicht hier sein – wir denken an ihn. Aber zum Glück haben wir <span class="person">Pascal Broschek</span> hier: den Sohn eines Gründers. <span class="person">Pascal</span> hat den Club nicht als Mitglied von Anfang an erlebt, sondern aus einer Perspektive, die fast keiner von uns hat – als Kind eines Rotariers. <span class="person">Pascal</span>, lass uns dort anfangen, wo deine Geschichte mit Rotary begonnen hat: am Familientisch zu Hause."</p>
+<p>
+</p>
+<ol style="color:#5C2E04;">
+<li><strong>Das Sakko-Bild:</strong> <span class="person">Pascal</span>, wie war das, wenn dein Vater am Donnerstag das Rotary-Sakko angezogen hat – was war das für ein Moment in der Familie?</li>
+<li><strong>Die Kindheits-Perspektive:</strong> Was hast du als Kind verstanden von dem, was Rotary ist – und was hast du dir zusammengereimt?</li>
+<li><strong>Die Gespräche zu Hause:</strong> Worüber hat dein Vater geredet, wenn er vom Meeting heimkam? Erinnerst du dich an einen konkreten Satz, ein Projekt, einen Namen?</li>
+<li><strong>Der Umkipp-Moment:</strong> Wann hast du zum ersten Mal gespürt, dass das nicht „der Klub von Papa" ist, sondern dass dich das selbst angeht?</li>
+<li><strong>Die Brücke:</strong> Wenn du heute als Rotarier am Donnerstag dasitzt – siehst du deinen Vater dann manchmal in dir? Und in welchem Punkt machst du es anders?</li>
+<li><strong>Old &amp; Young:</strong> Was ist heute leichter geworden im Club – und was vermisst du vielleicht von dem, was bei deinem Vater noch selbstverständlich war?</li>
+<li><strong>Abschluss-Frage (Wirkung):</strong> Wenn dein Vater heute hier säße und sehen würde, was 60 Jahre später geworden ist – was würdest du ihm sagen?</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="block">
+<div class="time">19:01 – 19:06</div>
+<div class="title">Musikmoment</div>
+<div class="who"><span class="person">Junko Philipp</span> – Strauß „Unter Donner und Blitz", op. 324</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Anmoderation (<span class="person">Christoph</span>) – erste Vorstellung von <span class="person">Junko</span></span>
+<span class="speech">„Und jetzt darf ich Euch eine Person vorstellen, die wir heute Abend schon einmal gehört haben – ohne dass ich sie genannt habe: <strong><span class="person">Junko Philipp</span></strong>. <span class="person">Junko</span> ist die <strong>Schwiegertochter unseres langjährigen, hochverdienten Mitglieds <span class="person">Hans Philipp</span></strong>. Bitte einen herzlichen Applaus für <span class="person">Junko Philipp</span>.<br/><br/>
+<em>[Applaus, <span class="person">Junko</span> kommt ans Klavier]</em><br/><br/>
+Sie spielt jetzt für uns: Johann Strauß – ‚Unter Donner und Blitz', op. 324."</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">Diese Anmoderation ist <strong>die erste Vorstellung von Junko</strong> an diesem Abend – bei der Rotary Fanfare im Opening wurde sie noch nicht angekündigt.</div>
+</div>
+</div>
+<!-- ===================== PROJEKT 1 ===================== -->
+<div class="block project" id="projekt1">
+<div class="time">19:06 – 19:16</div>
+<div class="title">Projekt 1 – Education national &amp; international <span style="font-size:1rem; color:var(--muted); font-weight:500;">(10 Min.)</span></div>
+<div class="einstieg">
+<strong>Einstieg (Moderator):</strong> „Bildung ist der klassische Rotary-Hebel. Wir schauen auf 60 Jahre Schulbau, Förderung, Rotaract – mit drei Stimmen und einer Grußbotschaft aus Madagaskar, in 10 Minuten."
+      <br/><em style="font-size:0.88rem; color:#92400E; display:block; margin-top:6px;">⏱️ Timing-Disziplin: 10 Min. = 3 Sprecher:innen (je ~2,5 Min. inkl. Anmoderation) + Axel-Video (1–2 Min.). Reserve-Fragen unten als Backup.</em>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Hans Philipp</span> <span class="badge then">Then</span>
+<span class="role">– Education national &amp; international</span>
+</div><div class="folien"><span class="label">📊 Folie</span> Bulgarien-Foto / Maßband / Übungsfirmen-Bild</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Anmoderation von Hans (<span class="person">Christoph</span>) – mit Fakten</span>
+<span class="speech">„Seit 1994 trägt einer die Bildungsarbeit unseres Clubs maßgeblich: <span class="person">Hans Philipp</span>. Die Zahlen dazu sind beeindruckend – rund <strong>500 Lehrpersonen</strong> und über <strong>10.000 Jugendliche</strong> wurden erreicht, etwa <strong>2,5 Millionen Euro</strong> wurden investiert. Themen: Übungsfirma, Entrepreneurship, Lehrbücher, RYLA-Seminare, Rotary Youth Award, Sommerhochschule für Lehrpersonen. Geographisch: zuerst Südosteuropa – Bulgarien, Rumänien, der Westbalkan – später auch Österreich. Partner: Rotary Foundation, Distrikte aus Österreich, Bayern, Italien. In Bulgarien wird <span class="person">Hans</span> bis heute liebevoll als <em>‚Vater der Übungsfirma'</em> bezeichnet. Lieber <span class="person">Hans</span> –"</span>
+</div>
+<ol class="questions">
+<li><span class="person">Hans</span>, welches eine Bildungsprojekt aus den ersten Jahrzehnten hat dich persönlich am meisten geprägt – und warum?</li>
+<li>Wo sehen wir heute noch die Wirkung – und gibt es Menschen, zu denen du bis heute persönlich Verbindung hast? <em>(Ehren-Adoptivtochter)</em></li>
+<li>Warum bist du in Bulgarien unter die Tische gekrochen? <em>(Maßband hochhalten)</em></li>
+<li>Was hast du ohne Kleidung in Bulgarien gemacht? <em>(Autoschlüssel-Anekdote)</em></li>
+</ol>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Michael Rosendorfer</span> <span class="badge now">Now</span>
+<span class="role">– Education / Rotaract-Gründer / Lehrlingsprojekt „Grow In" (mit <span class="person">Raimund Stanger</span>)</span>
+</div><div class="folien"><span class="label">📊 Folie</span> Grow-In-Logo / Rotaract-Logo / Lehrlinge-Foto</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Anmoderation von <span class="person">Michael</span> (<span class="person">Christoph</span>) – mit Fakten</span>
+<span class="speech">„Bildung heute – dafür steht <span class="person">Michael Rosendorfer</span>. <span class="person">Michael</span> hat in Kitzbühel <strong>Rotaract gegründet</strong> und damit die nächste Generation junger Rotarier auf die Bühne geholt. Gemeinsam mit <span class="person">Raimund Stanger</span>, den wir später noch hören werden, hat er das <strong>Projekt „Grow In"</strong> aus der Taufe gehoben – ein Lehrlingsprojekt, das jungen Menschen in Lehre und Beruf den Rücken stärkt. Lieber <span class="person">Michael</span> –"</span>
+</div>
+<ol class="questions">
+<li><span class="person">Michael</span>, warum habt ihr „Grow In" überhaupt gemacht – was war der Anlass, was hat euch da gepackt?</li>
+<li>Und was hat „Grow In" bisher bewirkt – für die Lehrlinge, für die Betriebe, für die Region?</li>
+</ol>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Judith Köck</span> <span class="badge now">Now</span>
+<span class="role">– Projektleiterin Schulprojekt „Kidera" (Uganda)</span>
+</div><div class="folien"><span class="label">📊 Folie</span> Foto Schulprojekt Kidera in Uganda</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Anmoderation von <span class="person">Judith</span> (<span class="person">Christoph</span>) – mit Fakten</span>
+<span class="speech">„Eine, die Bildung nicht aus der Distanz, sondern aus der Nähe denkt: <span class="person">Judith Köck</span>. <span class="person">Judith</span> ist die <strong>Projektleiterin unseres Schulprojekts „Kidera"</strong> in Uganda – und sie reist regelmäßig vor Ort, um zu sehen, was wirklich ankommt und wo der nächste Hebel anzusetzen ist. Liebe <span class="person">Judith</span> –"</span>
+</div>
+<ol class="questions">
+<li><span class="person">Judith</span>, du bist immer wieder selbst in Uganda – was siehst du dort, was uns hier in Kitzbühel sonst nicht erreicht?</li>
+<li>Was hat „Kidera" in den letzten Jahren konkret bewegt – und wer profitiert davon?</li>
+</ol>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Axel Naglich</span> <span class="badge both">Then &amp; Now</span>
+<span class="role">– Schulprojekt Madagaskar · <strong style="color:var(--rotary-blue);">Grußbotschaft per Video</strong></span>
+</div><div class="folien"><span class="label">📊 Folie</span> Foto Madagaskar / Karte / Schulprojekt vor Ort</div>
+<div class="ankuendigung">
+<span class="label">🎬 Anmoderation Grußbotschaft (<span class="person">Christoph</span>)</span>
+<span class="speech">„Ein Bildungsprojekt führt uns heute noch ein Stück weiter – nach Madagaskar. Dort begleitet <span class="person">Axel Naglich</span> ein Schulprojekt vor Ort. <span class="person">Axel</span> kann heute nicht persönlich hier sein, aber er hat uns eine Grußbotschaft geschickt. Bitte einmal auf die Leinwand:"</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Video-Einspieler: <span class="person">Axel</span>s Grußbotschaft aus Madagaskar (Dauer ca. 1–2 Min.)</div>
+</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Abmoderation Grußbotschaft (<span class="person">Christoph</span>)</span>
+<span class="speech">„Danke, lieber <span class="person">Axel</span> – auf diesem Weg ganz herzlich zurück. Und damit haben wir in zehn Minuten gehört: Bildung von Bulgarien über Lehrlinge in Tirol bis nach Uganda und Madagaskar. Rotary in Bewegung."</span>
+</div>
+</div>
+<p style="color: var(--muted); font-style: italic; margin-top: 18px;">Überleitung zu Exchange: „Von der Schulbank in die weite Welt – jetzt geht's um Begegnungen, die ein Leben prägen."</p>
+</div>
+<!-- ===================== PROJEKT 2 (vor dem Essen!) ===================== -->
+<div class="block project" id="projekt2">
+<div class="time">19:16 – 19:26</div>
+<div class="title">Projekt 2 – Exchange und Wirkung <span style="font-size:1rem; color:var(--muted); font-weight:500;">(10 Min.)</span></div>
+<div class="einstieg">
+<strong>Einstieg (Moderator):</strong> „Ein Jahr in einer anderen Welt – was das mit Menschen macht, hören wir jetzt aus drei Perspektiven: einer Videobotschaft eines ehemaligen Austauschkindes, dem heutigen Exchange-Koordinator – und einem Gastvater von damals."
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Martin Jordan</span> <span class="badge then">Then</span>
+<span class="role">– ehem. Austauschkind · <strong style="color:var(--rotary-blue);">Videobotschaft (Start des Blocks)</strong></span>
+</div><div class="folien"><span class="label">📊 Folie</span> <strong>Videobotschaft von <span class="person">Martin Jordan</span></strong> – das Video läuft vollformatig auf der Leinwand, es ist die Folie für diesen Moment</div>
+<div class="ankuendigung">
+<span class="label">🎬 Anmoderation Videobotschaft (<span class="person">Christoph</span>)</span>
+<span class="speech">„Wir starten den Block mit einer Videobotschaft – von <span class="person">Martin Jordan</span>, der selbst als Austauschkind ein Jahr in der Fremde war und uns aus seiner Perspektive grüßt. Bitte einmal auf die Leinwand:"</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Video-Einspieler: <span class="person">Martin Jordan</span>s Grußbotschaft (Dauer ca. 1–2 Min.) – analog zu <span class="person">Axel</span>s Madagaskar-Botschaft im Education-Block.<br/>
+📋 TODO: Video von <span class="person">Martin</span> rechtzeitig einholen, Format/Auflösung mit Technik abstimmen.</div>
+</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Abmoderation Videobotschaft (<span class="person">Christoph</span>)</span>
+<span class="speech">„Danke, lieber <span class="person">Martin</span>, auf diesem Weg – und jetzt zu jemandem, der den Exchange heute lebt:"</span>
+</div>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Reini Pirchl</span> <span class="badge now">Now</span>
+<span class="role">– Exchange aktuell · bringt aktuelles Austauschkind <span class="person">Sophia</span> mit (im Publikum)</span>
+</div><div class="folien"><span class="label">📊 Folie</span> Foto Exchange-Programm / Weltkarte mit Ländern</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Anmoderation (<span class="person">Christoph</span>)</span>
+<span class="speech">„Was Exchange heute heißt, sieht man am besten an einem konkreten Beispiel. <span class="person">Reini Pirchl</span> betreut aktuell unser Austauschkind <span class="person">Sophia</span> – und <span class="person">Sophia</span> ist heute Abend mit uns im Saal."</span></div>
+<ol class="questions">
+<li><span class="person">Reini</span>, wer kommt heute zu uns nach Kitzbühel – und wer geht hinaus? Eine Zahl, ein Land, eine Geschichte.</li>
+<li>Was hat sich in den letzten Jahren am Exchange-Programm verändert?</li>
+<li>Erzähl uns kurz von <span class="person">Sophia</span> – woher kommt sie, was nimmt sie mit?</li>
+</ol>
+<div class="ankuendigung" style="background:#FEF3C7; border-left-color:#92400E;">
+<span class="label" style="color:#92400E;">🎤 <span class="person">Sophia</span> im Publikum + Geschenk-Übergabe</span>
+<span class="speech">Kurzfrage an <span class="person">Sophia</span> – Kamera auf sie, Mikro kommt zu ihr:<br/>
+„<span class="person">Sophia</span>, in einem Satz: Was nimmst du aus deinem Jahr in Kitzbühel mit?"<br/><br/>
+🎁 <strong>Geschenk-Übergabe Set mit Rotary-Kleidung</strong> (Merchandise vom JAKO-Teamshop) – Übergabe durch <span class="person">Hedy</span>:<br/>
+  1. an <span class="person">Sophia</span> (Austauschkind)<br/>
+  2. an die <strong>beiden anwesenden Governors</strong><br/>
+  Kurzer Applaus-Moment, Foto pro Übergabe.</span>
+</div>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Hermann Denkmayr</span> <span class="badge then">Then</span>
+<span class="role">– Austauschvater · hatte eine Schwedin zu Gast</span>
+</div><div class="folien"><span class="label">📊 Folie</span> Symbol-Foto: schwedische Flagge / Frühstückstisch / Disco-Atmosphäre</div>
+<ol class="questions">
+<li><span class="person">Hermann</span>, du hattest damals eine <strong>Schwedin</strong> bei euch zu Gast. Wie war das – plötzlich saß sie am <strong>Frühstückstisch</strong>? Kannst du überhaupt Schwedisch?</li>
+<li>Und mal ehrlich: <strong>Warst du mit ihr in der Disco?</strong></li>
+</ol>
+</div>
+<p style="color: var(--muted); font-style: italic; margin-top: 18px;">Überleitung zur Hauptspeise: „Begegnung verbindet – und das tut auch das nächste, was jetzt kommt: gemeinsam essen."</p>
+</div>
+<!-- ===================== HAUPTSPEISE (jetzt nach Exchange) ===================== -->
+<div class="block">
+<div class="time">19:26 – 19:56</div>
+<div class="title">Hauptspeise (max. 30 Min.)</div>
+<div class="who">Rotaract-Band spielt dezent · keine Bühnenaktion</div><div class="folien"><span class="label">📊 Folie</span> <strong>Reel 1 (60-Jahre-Bilder) und Reel 2 (Präsidenten-Reel) laufen abwechselnd</strong> – dezent während des Essens, kein Sprecher, Wandschmuck-Charakter</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Übergang in die Hauptspeise (<span class="person">Christoph</span>)</span>
+<span class="speech">„Vielen Dank an <span class="person">Reini</span>, <span class="person">Martin</span> und <span class="person">Hermann</span> – Begegnung verbindet. Und jetzt verbindet uns das Gleiche, was Menschen seit jeher verbindet: ein gemeinsames Essen. Die Hauptspeise wird serviert. Mahlzeit – wir sehen uns in einer halben Stunde wieder."</span>
+</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Wiedereinstieg nach der Hauptspeise (<span class="person">Christoph</span>)</span>
+<span class="speech">„Ihr habt alle gut gegessen und seid nun satt. Jetzt geht es weiter mit der Frage: Wie finanzieren wir unsere Projekte überhaupt?"</span>
+</div>
+</div>
+<!-- ===================== PROJEKT 3 ===================== -->
+<div class="block project" id="projekt3">
+<div class="time">19:56 – 20:06</div>
+<div class="title">Projekt 3 – Fundraising Events <span style="font-size:1rem; color:var(--muted); font-weight:500;">(10 Min.)</span></div>
+<div class="einstieg">
+<strong>Einstieg:</strong> „Ohne Spenden keine Wirkung. Wir schauen auf eure Events – und darauf, was danach passiert."
+    </div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Moni Gredler</span> <span class="badge now">Now</span>
+<span class="role">– Konzerte im K3</span>
+</div><div class="folien"><span class="label">📊 Folie</span> Foto Konzert im K3 / Bühnenfoto / Veranstaltungsplakat</div>
+<ol class="questions">
+<li><span class="person">Moni</span>, was waren eure erfolgreichsten Veranstaltungen?</li>
+<li>In einer Zahl: Wie viel kommt zusammen – und wohin geht es?</li>
+</ol>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Anne Götzendorfer</span> <span class="badge now">Now</span>
+<span class="role">– Christkindlmarkt</span>
+</div><div class="folien"><span class="label">📊 Folie</span> Foto Christkindlmarkt-Stand / Weihnachtsstimmung</div>
+<ol class="questions">
+<li><span class="person">Anne</span>, euer Christkindlmarkt ist mittlerweile Institution. Was ist der emotionalste Moment am Stand?</li>
+</ol>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Walter Endstrasser</span> <span class="badge then">Then</span>
+<span class="role">– Pflastersteine &amp; Gämsen · bringt beide Objekte zum Herzeigen mit auf die Bühne</span>
+</div><div class="folien"><span class="label">📊 Folie</span> Foto Pflastersteine + Gämsen-Aktion (Originalobjekte, Wirkungsbilder)</div>
+<div class="ankuendigung" style="background:#FEF3C7;">
+<span class="label" style="color:#92400E;">🎁 Requisite – physisch auf die Bühne</span>
+<span class="speech"><span class="person">Walter</span> bringt einen <strong>Pflasterstein</strong> und eine <strong>Gämse</strong> zum Herzeigen mit auf die Bühne – Original-Objekte für die Kamera und das Publikum.</span>
+</div>
+<ol class="questions">
+<li><span class="person">Walter</span>, die <strong>Pflastersteine</strong> <em>(in die Höhe halten)</em> – erzähl uns kurz: Was ist die Idee dahinter, wer hat mitgemacht, was ist daraus geworden?</li>
+<li>Und die <strong>Gämsen</strong> <em>(Gämse zeigen)</em>: Wie ist diese Aktion entstanden – und was hat sie für den Club bzw. für die Region bedeutet?</li>
+</ol>
+</div>
+<div class="ankuendigung" style="background:#FEF3C7; border-left-color:#92400E;">
+<span class="label" style="color:#92400E;">📞 TODO <span class="person">Christoph</span> + <span class="person">Peter Höbarth</span></span>
+<span class="speech"><span class="person">Peter Höbarth</span> und <span class="person">Heinz Sohler</span> entfallen. <span class="person">Peter</span> sucht aktiv Ersatz für ein weiteres Fundraising-„Then"-Statement. Aktueller Stand: <span class="person">Walter</span> bringt nur Pflastersteine + Gamsen.</span>
+</div>
+</div>
+<!-- ===================== PROJEKT 4 ===================== -->
+<div class="block project" id="projekt4">
+<div class="time">20:06 – 20:16</div>
+<div class="title">Projekt 4 – Rotary Sport bewegt <span style="font-size:1rem; color:var(--muted); font-weight:500;">(10 Min.)</span></div>
+<div class="einstieg">
+<strong>Einstieg:</strong> „Kitzbühel und Sport – das ist unsere DNA. Wir schauen auf vier Formate, die Sport mit Wirkung verbinden."
+    </div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Raimund Stanger</span> &amp; <span class="person">Günther Aigner</span> <span class="badge now">Now</span>
+<span class="role">– Rotary Rad-WM (gemeinsam)</span>
+</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Einleitung &amp; Anmoderation (<span class="person">Christoph</span>) – Then &amp; Now Rad</span>
+<span class="speech">„Früher hat unser Club ganz gemütliche Radausflüge gemacht – heute sind wir bei den Rennradlern. Aus den Sonntags-Touren ist eine <strong>Rotary Rad-WM</strong> geworden. Wie das passiert ist, und wer dahintersteckt: <span class="person">Raimund Stanger</span> und <span class="person">Günther Aigner</span>."</span>
+</div>
+<ol class="questions">
+<li>Die <strong>Rotary Rad-WM</strong> – wie ist die Idee entstanden, wer kommt nach Kitzbühel, und was bedeutet das für unseren Club?</li>
+<li>Was macht das Event als rotarisches Sport-Format einzigartig – und wo wirkt der Erlös?</li>
+</ol>
+</div>
+<div class="speaker" style="opacity:0.85; border-left:3px dashed var(--muted); padding-left:12px;">
+<div class="speaker-name">
+<span class="person">Uli Dorner</span> <span class="badge now">Now</span>
+<span class="role">– Golf · <strong style="color:#92400E;">Teilnahme unsicher</strong></span>
+</div><div class="folien"><span class="label">📊 Folie</span> Foto Golfturnier / Greenfee-Aktion</div>
+<em style="font-size:0.88rem; color:var(--muted); display:block; margin-bottom:6px;"><span class="person">Uli</span> hat noch nicht fix zugesagt – Frage als Reserve bereithalten. Falls er nicht da ist: Zeit auf <span class="person">Raimund</span>/<span class="person">Günther</span>/<span class="person">Hermann</span> bzw. die Publikumsbefragung verteilen.</em>
+<ol class="questions">
+<li><span class="person">Uli</span>, euer Golf-Turnier: Was passiert neben dem sportlichen Moment – und wer profitiert von den Erlösen?</li>
+</ol>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Benni Schorer</span> <span class="badge then">Then</span>
+<span class="role">– Golf-Freitag in Kitzbühel · <strong style="color:var(--rotary-blue);"><span class="person">Hedy</span> kommt mit Stuhl &amp; Mikro zu ihm ins Publikum</strong></span>
+</div><div class="folien"><span class="label">📊 Folie</span> Foto Golf-Freitag in Kitzbühel / Lunchpaket / Golfplatz</div>
+<div class="ankuendigung hand-off">
+<span class="label">🎙️ <span class="person">Hedy</span> kommt zu Benni – mit Stuhl &amp; Mikro</span>
+<span class="speech"><span class="person">Hedy</span> nimmt einen <strong>Stuhl und ein Mikrofon</strong>, geht hinunter zu <span class="person">Benni Schorer</span> ins Publikum, <strong>setzt sich neben ihn</strong> und stellt ihm die Frage:<br/><br/>
+„Eine Stimme aus den Anfangsjahren sitzt heute mitten unter uns – <span class="person">Benni Schorer</span>. <span class="person">Benni</span>, ich hätte da eine Frage an dich:<br/><br/>
+<strong>Warum hast du für die Rotarier jede zweite Woche ein Lunchpaket hergerichtet?</strong>"</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Kameramann fängt beide ein – <span class="person">Hedy</span> und <span class="person">Benni</span> sitzen nebeneinander im Publikum, Live-Einblendung auf der Leinwand.</div>
+</div>
+</div>
+<div class="speaker">
+<div class="speaker-name">
+<span class="person">Gerhard Resch</span> <span class="badge then">Then</span>
+<span class="role">– ehem. Weltpräsident Rotary Golf · <strong style="color:var(--rotary-blue);"><span class="person">Christoph</span> kommt mit Mikro zu ihm ins Publikum und setzt sich neben ihn</strong></span>
+</div><div class="folien"><span class="label">📊 Folie</span> Rotary-Golf-Weltlogo / Foto vom Weltpräsidenten-Amt (Event-Foto)</div>
+<div class="ankuendigung">
+<span class="label">🎙️ <span class="person">Christoph</span> geht zu <span class="person">Gerhard</span> – setzt sich neben ihn</span>
+<span class="speech"><span class="person">Christoph</span> nimmt das Mikrofon, geht zu <span class="person">Gerhard Resch</span> ins Publikum, <strong>setzt sich neben ihn</strong> und stellt ihm die Frage:<br/><br/>
+„Und noch eine besondere Stimme aus unseren Reihen – ebenfalls aus dem Publikum: <span class="person">Gerhard Resch</span>, ehemaliger <strong>Weltpräsident von Rotary Golf</strong>."</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Kameramann fängt beide ein – <span class="person">Christoph</span> und <span class="person">Gerhard</span> nebeneinander, Live-Einblendung auf der Leinwand.</div>
+</div>
+<ol class="questions">
+<li><span class="person">Gerhard</span>, Weltpräsident Rotary Golf – wie kommt ein Mann aus Kitzbühel in dieses Amt, und was macht Rotary Golf weltweit aus?</li>
+</ol>
+</div>
+</div>
+<!-- ===================== Abschluss ===================== -->
+<div class="block">
+<div class="time">20:16 – 20:19</div>
+<div class="title">Überraschungsmoment</div>
+<div class="who"><span class="person">Junko Philipp</span> – Klavier</div><div class="folien"><span class="label">📊 Folie</span> <strong>Motiv:</strong> ruhiges, atmosphärisches Bild (z. B. Konzertstimmung / Notenblatt)</div>
+</div>
+<div class="block">
+<div class="time">20:19 – 20:31</div>
+<div class="title">Offizieller Abschluss &amp; Ehrungen</div>
+<div class="who"><span class="person">Hedy Bendler</span> &amp; <span class="person">Walter Endstrasser</span> · Paul-Harris-Verleihung (mit Kamera) · Münzen-Übergabe · Verabschiedung</div>
+<div class="ankuendigung hand-off">
+<span class="label">🎙️ Übergabe (<span class="person">Christoph</span> → <span class="person">Hedy</span> &amp; <span class="person">Walter</span>)</span>
+<span class="speech">„Jetzt wollen wir noch einen ersten Paul Harris an verdiente Mitglieder übergeben. <span class="person">Hedy</span> und <span class="person">Walter</span>, bitte sehr."</span>
+</div>
+<div class="ankuendigung">
+<span class="label">🏅 Paul-Harris-Verleihung am Ehrentisch (<span class="person">Hedy</span> &amp; <span class="person">Walter</span> · mit Kameramann)</span>
+<span class="speech"><span class="person">Hedy Bendler</span> und <span class="person">Walter Endstrasser</span> verleihen <strong>4 Paul Harris Fellow Auszeichnungen</strong> – die Übergabe erfolgt <strong>direkt am Ehrentisch im Saal</strong>, nicht auf der Bühne. Pro Person:<br/><br/>
+1. Person wird namentlich genannt (bleibt am Tisch sitzen oder steht kurz auf).<br/>
+2. <strong><span class="person">Walter</span> erklärt, WARUM diese Person die Auszeichnung erhält</strong> – Verdienste, Projekte, persönlicher Beitrag (2–3 Sätze).<br/>
+3. <strong><span class="person">Hedy</span> kommt zum Ehrentisch</strong> und überreicht Paul-Harris-Nadel und Urkunde dort.<br/>
+4. Foto, kurzer Applaus.</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Kameramann ist dabei – wandert mit zum Ehrentisch, Live-Einblendung jeder Übergabe auf der Leinwand, professionelles Foto pro Person.<br/>
+📋 TODO: Namen der 4 Ausgezeichneten + Walters Begründungstexte (2–3 Sätze pro Person) vorab abstimmen und hier ergänzen.</div>
+</div>
+<div class="ankuendigung">
+<span class="label">🎙️ Anmoderation Münzen-Vorstellung (<span class="person">Christoph</span>)</span>
+<span class="speech">„Jetzt gibt es noch was ganz Unvergessliches. Lieber <span class="person">Reini</span>, was hast du uns denn mitgebracht?"</span>
+</div>
+<div class="ankuendigung">
+<span class="label">🪙 Münzen-Premiere &amp; symbolische Übergabe (Abschluss) – mit Kamera</span>
+<span class="speech">1. <strong><span class="person">Reini Pirchl</span> stellt die Münze von der Bühne vor</strong> – Idee, Motiv, Prägung, Anzahl (200 Stk Silbermünzen mit 60-Jahre-Motto / Altes &amp; Neues Logo).<br/><br/>
+2. <strong>Symbolische Übergabe durch die Präsidentin</strong>: <span class="person">Hedy Bendler</span> nimmt eine Münze von der Bühne, geht hinunter zu <span class="person">Günther Much</span> an seinen Tisch und überreicht sie ihm dort.<br/><br/>
+3. Die restlichen Münzen liegen an den Tischen / werden an Ehrengäste verteilt.</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Kameramann ist dabei – Low-Angle auf die Münze bei <span class="person">Reinis</span> Vorstellung, dann Schwenk zur Übergabe an <span class="person">Günther</span> am Tisch. Live-Einblendung auf der Leinwand.</div>
+</div>
+<div class="ankuendigung hand-off">
+<span class="label">🎙️ Verabschiedung &amp; Aufruf zum Kuchen (<span class="person">Hedy</span>)</span>
+<span class="speech">„Vielen Dank, dass ihr dabei wart, wie wir unseren 60er gefeiert haben. Ich gehe jetzt Kuchen anschneiden. Da hinten. Alle Präsidenten kommen bitte mit dazu. Dankeschön."</span>
+</div>
+<div class="ankuendigung">
+<span class="label">🎂 Kuchen-Anschnitt mit „Happy Birthday" – gemeinsam &amp; mit Kamera</span>
+<span class="speech">Nach der Verabschiedung kommen alle Präsidentinnen und Präsidenten, der Governor und die Rotaracter:innen zusammen auf die Bühne (oder zur Kuchen-Station) und <strong>schneiden gemeinsam den 60-Jahre-Jubiläumskuchen an</strong>.<br/><br/>
+🎶 <strong>Der ganze Saal singt „Happy Birthday"</strong> – musikalische Begleitung durch <span class="person">Junko Philipp</span> oder die Rotaract-Band.<br/><br/>
+Sinnbildlich: Generationen vereint, Clubs vereint, Old &amp; Young – Then &amp; Now.</span>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Kameramann fängt den gemeinsamen Anschnitt und das Singen live ein – Live-Einblendung auf der Leinwand, Gruppenfoto.<br/>
+📋 TODO: Kuchen rechtzeitig bereitstellen, Messer/Schaufel organisieren, Position vorab abstimmen. Klären, ob <span class="person">Junko</span> oder Band einsetzt.</div>
+</div>
+</div>
+<div class="block">
+<div class="time">ab 20:31</div>
+<div class="title">Nachspeisenbuffet &amp; Ausklang „Old &amp; Young"</div>
+<div class="who">Rotaract-Band · Musikalischer Ausklang (dezent)</div><div class="folien"><span class="label">📊 Folie</span> <strong>Reel 1 läuft erneut im Loop</strong> – 60 Jahre Bilder als Wandschmuck</div>
+</div>
+<footer>
+    60 Jahre Rotary Club Kitzbühel · Stand 15.05.2026 · Moderation: <span class="person">Christoph Holz</span>
+</footer>
+</div>
+</body>
+</html>
