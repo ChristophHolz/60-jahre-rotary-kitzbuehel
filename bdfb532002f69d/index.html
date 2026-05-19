@@ -85,6 +85,29 @@
     margin: 18px 0;
     font-style: italic;
   }
+  .todo {
+    background: #C8102E;
+    color: #FFFFFF;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  .todo strong, .todo .person, .todo .label, .todo a {
+    color: #FFFFFF;
+  }
+  .todo-pill {
+    display: inline-block;
+    background: #C8102E;
+    color: #FFFFFF;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .todo-pill .person { color: #FFFFFF; }
   .block {
     background: var(--card);
     border: 1px solid var(--line);
@@ -326,39 +349,39 @@
 <span class="label">1️⃣ Prominente / Ehrengäste aus Stadt &amp; Region</span>
 <span class="speech"><strong><span class="person">Hedy</span>:</strong> „Wir freuen uns sehr über zwei besondere Gäste aus Kitzbühel:<br/><br/>
 • <strong><span class="person">Hedwig Haidacher</span></strong> in Vertretung der <strong>Stadt Kitzbühel</strong><br/>
-• <strong>Vertretung des Pflegeheims</strong> – [Name TODO]"<br/><br/>
+• <strong>Vertretung des Pflegeheims</strong> – <span class="todo-pill">Name TODO</span>"<br/><br/>
 <em>Namentliche Erwähnung mit kurzem Applaus – kein Grußwort.</em></span>
-<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📋 TODO: konkrete Person der Pflegeheim-Vertretung ergänzen.</div>
+<div class="todo">📋 TODO: konkrete Person der Pflegeheim-Vertretung ergänzen.</div>
 </div>
 <div class="ankuendigung hand-off">
 <span class="label">2️⃣ Mutterclub – RC Kufstein (geht los)</span>
-<span class="speech"><strong><span class="person">Hedy</span>:</strong> „Wir beginnen mit unserem <strong>Mutterclub</strong> – dem RC Kufstein, der uns 1966 gegründet hat. Ich begrüße den/die Präsident:in [Name TODO]."<br/><br/>
+<span class="speech"><strong><span class="person">Hedy</span>:</strong> „Wir beginnen mit unserem <strong>Mutterclub</strong> – dem RC Kufstein, der uns 1966 gegründet hat. Ich begrüße den/die Präsident:in <span class="todo-pill">Name TODO</span>."<br/><br/>
 <strong><span class="person">Christoph</span></strong> → Grußwort RC Kufstein.</span>
 </div>
 <div class="ankuendigung hand-off">
 <span class="label">3️⃣ Unsere Patenkinder – RC Zell am See, RC Wörgl-Brixental, Rotaract Kitzbühel</span>
 <span class="speech"><strong><span class="person">Hedy</span>:</strong> „Und mit Stolz: Wir selbst haben drei Clubs ins Leben gerufen – den RC Zell am See, den RC Wörgl-Brixental und unseren Rotaract Kitzbühel. Ich begrüße der Reihe nach:"<br/><br/>
-• <strong>RC Zell am See</strong> – [Name TODO] · <span class="person">Christoph</span> → Grußwort<br/>
-• <strong>RC Wörgl-Brixental</strong> – [Name TODO] · <span class="person">Christoph</span> → Grußwort<br/>
-• <strong>Rotaract Kitzbühel</strong> – [Name TODO] · <span class="person">Christoph</span> → Grußwort</span>
+• <strong>RC Zell am See</strong> – <span class="todo-pill">Name TODO</span> · <span class="person">Christoph</span> → Grußwort<br/>
+• <strong>RC Wörgl-Brixental</strong> – <span class="todo-pill">Name TODO</span> · <span class="person">Christoph</span> → Grußwort<br/>
+• <strong>Rotaract Kitzbühel</strong> – <span class="todo-pill">Name TODO</span> · <span class="person">Christoph</span> → Grußwort</span>
 </div>
 <div class="folien"><img class="folien-thumb" src="folien/folie-geschichte-die-wirkt.jpg" alt="Folie: 60 Jahre Rotary Kitzbühel – Geschichte, die wirkt."/><div class="folien-text"><span class="label">📊 Folie</span> <strong>Folie:</strong> Logo RC Kitzbühel + 60-Jahre-Jubiläumslogo „Geschichte, die wirkt." (kommt nach dem Rotaract-Grußwort wieder zurück)</div></div>
 <div class="ankuendigung hand-off">
 <span class="label">4️⃣ Befreundete Clubs – RC Saalfelden, RC Lignano &amp; weitere lt. Anmeldungsliste (nur kurze Erwähnung, kein Grußwort)</span>
-<span class="speech"><strong><span class="person">Hedy</span>:</strong> „Außerdem begrüße ich noch den <strong>Rotary Club Saalfelden</strong> mit [Name TODO], den <strong>Rotary Club Lignano</strong> mit [Name TODO] – und unsere weiteren rotarischen Freunde:<br/><br/>
-• <strong>RC [Club 3]</strong> mit [Name TODO]<br/>
-• <strong>RC [Club 4]</strong> mit [Name TODO]<br/>
-• <strong>RC [Club 5]</strong> mit [Name TODO]<br/>
+<span class="speech"><strong><span class="person">Hedy</span>:</strong> „Außerdem begrüße ich noch den <strong>Rotary Club Saalfelden</strong> mit <span class="todo-pill">Name TODO</span>, den <strong>Rotary Club Lignano</strong> mit <span class="todo-pill">Name TODO</span> – und unsere weiteren rotarischen Freunde:<br/><br/>
+• <strong>RC <span class="todo-pill">Club 3</span></strong> mit <span class="todo-pill">Name TODO</span><br/>
+• <strong>RC <span class="todo-pill">Club 4</span></strong> mit <span class="todo-pill">Name TODO</span><br/>
+• <strong>RC <span class="todo-pill">Club 5</span></strong> mit <span class="todo-pill">Name TODO</span><br/>
 <em>(Liste vor dem Abend aus der Anmeldungsliste vervollständigen)</em>"<br/><br/>
 <em>Nur namentliche Erwähnung – kein Grußwort, keine Kamera.</em></span>
-<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📋 TODO: Anmeldungsliste durchgehen, alle weiteren anwesenden Clubs + Präsident:innen-Namen hier ergänzen.</div>
+<div class="todo">📋 TODO: Anmeldungsliste durchgehen, alle weiteren anwesenden Clubs + Präsident:innen-Namen hier ergänzen.</div>
 </div>
 <div class="ankuendigung hand-off">
 <span class="label">5️⃣ <span class="person">Hedy</span> – Kurze Ansprache (~2 Min) + Anmoderation beider Governors</span>
-<span class="speech"><strong>Hedys kurze Ansprache (ca. 2 Min) – Inhalt TODO:</strong><br/>
+<span class="speech"><strong>Hedys kurze Ansprache (ca. 2 Min) – <span class="todo-pill">Inhalt TODO</span></strong><br/>
 <em style="color:var(--muted);">Vorschlag: Blick auf 60 Jahre Wirkung des Clubs, Dank an die rotarische Familie, Bogen ins Heute. Frei zu formulieren – endet mit folgendem fixen Übergang zu den Governors:</em><br/><br/>
 <strong>Fixer Abschluss der Ansprache:</strong><br/>
-„… Und jetzt möchte ich noch den <strong>Incoming Governor [Name TODO]</strong> begrüßen und den <strong>amtierenden Governor <span class="person">Gustav Oberwallner</span></strong>. Und den darf ich bitte zu mir auf die Bühne bitten."</span>
+„… Und jetzt möchte ich noch den <strong>Incoming Governor <span class="todo-pill">Name TODO</span></strong> begrüßen und den <strong>amtierenden Governor <span class="person">Gustav Oberwallner</span></strong>. Und den darf ich bitte zu mir auf die Bühne bitten."</span>
 <div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">Beide Governors werden begrüßt – nur der amtierende Governor (<span class="person">Gustav</span>) hält ein Grußwort und kommt auf die Bühne. Der Incoming Governor bleibt am Platz.</div>
 </div>
 <div class="ankuendigung">
@@ -368,11 +391,11 @@
 3. <strong>Grußwort</strong> max. 45–60 Sek.<br/>
 4. Kurzer Applaus, dann nächster Club.</span>
 </div>
-<div class="ankuendigung" style="background:#FEF3C7; border-left-color:#92400E;">
-<span class="label" style="color:#92400E;">📋 TODO Namen</span>
-<span class="speech">Namen vor dem Abend klären und in die obigen Blöcke einsetzen:<br/>
+<div class="todo">
+<strong>📋 TODO Namen</strong><br/>
+Namen vor dem Abend klären und in die obigen Blöcke einsetzen:<br/>
 • Präsident:innen: RC Kufstein · RC Zell am See · RC Wörgl-Brixental · Rotaract Kitzbühel · RC Saalfelden · RC Lignano<br/>
-• Incoming Governor (zusätzlich zu <span class="person">Gustav Oberwallner</span>)</span>
+• Incoming Governor (zusätzlich zu <span class="person">Gustav Oberwallner</span>)
 </div>
 </div>
 <div class="block">
@@ -552,8 +575,8 @@ Sie spielt jetzt für uns: Johann Strauß – ‚Unter Donner und Blitz', op. 32
 <div class="ankuendigung">
 <span class="label">🎬 Anmoderation Videobotschaft (<span class="person">Christoph</span>)</span>
 <span class="speech">„Wir starten den Block mit einer Videobotschaft – von <span class="person">Martin Jordan</span>, der selbst als Austauschkind ein Jahr in der Fremde war und uns aus seiner Perspektive grüßt. Bitte einmal auf die Leinwand:"</span>
-<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Video-Einspieler: <span class="person">Martin Jordan</span>s Grußbotschaft (Dauer ca. 1–2 Min.) – analog zu <span class="person">Axel</span>s Madagaskar-Botschaft im Education-Block.<br/>
-📋 TODO: Video von <span class="person">Martin</span> rechtzeitig einholen, Format/Auflösung mit Technik abstimmen.</div>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Video-Einspieler: <span class="person">Martin Jordan</span>s Grußbotschaft (Dauer ca. 1–2 Min.) – analog zu <span class="person">Axel</span>s Madagaskar-Botschaft im Education-Block.</div>
+<div class="todo">📋 TODO: Video von <span class="person">Martin</span> rechtzeitig einholen, Format/Auflösung mit Technik abstimmen.</div>
 </div>
 <div class="ankuendigung">
 <span class="label">🎙️ Abmoderation Videobotschaft (<span class="person">Christoph</span>)</span>
@@ -661,16 +684,16 @@ Sie spielt jetzt für uns: Johann Strauß – ‚Unter Donner und Blitz', op. 32
 <div class="ankuendigung hand-off">
 <span class="label">🚲 Rikscha-Präsentation: <span class="person">Raimund Stanger</span></span>
 <span class="speech"><span class="person">Raimund</span> fährt mit der <strong>Rikscha</strong> in den Saal ein – als finaler Fundraising-Moment. <strong>Die Rikscha wird nur präsentiert, nicht übergeben.</strong><br/><br/>
-<strong>👤 Wer sitzt in der Rikscha?</strong> <span style="background:#FEF3C7; color:#92400E; font-size:0.78rem; padding:2px 8px; border-radius:4px; font-weight:700;">📋 TODO: Beifahrer:in festlegen</span></span>
-<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📋 TODO: Fahrweg im Saal, Stopp-Position, Aussteigen / Übergabe-Mikro klären. Mögliche Beifahrer:in: Ehrengast (z. B. Stadt-Vertretung <span class="person">Haidacher</span>), Pflegeheim-Vertretung, oder Empfänger:in der Spende.</div>
+<strong>👤 Wer sitzt in der Rikscha?</strong> <span class="todo-pill">📋 TODO: Beifahrer:in festlegen</span></span>
+<div class="todo">📋 TODO: Fahrweg im Saal, Stopp-Position, Aussteigen / Übergabe-Mikro klären. Mögliche Beifahrer:in: Ehrengast (z. B. Stadt-Vertretung <span class="person">Haidacher</span>), Pflegeheim-Vertretung, oder Empfänger:in der Spende.</div>
 </div>
 <ol class="questions">
 <li><span class="person">Raimund</span>, was ist denn das hier?</li>
 </ol>
 </div>
-<div class="ankuendigung" style="background:#FEF3C7; border-left-color:#92400E;">
-<span class="label" style="color:#92400E;">📞 TODO <span class="person">Christoph</span> + <span class="person">Peter Höbarth</span></span>
-<span class="speech"><span class="person">Peter Höbarth</span> und <span class="person">Heinz Sohler</span> entfallen. <span class="person">Peter</span> sucht aktiv Ersatz für ein weiteres Fundraising-„Then"-Statement. Aktueller Stand: <span class="person">Walter</span> bringt nur Pflastersteine + Gamsen.</span>
+<div class="todo">
+<strong>📞 TODO <span class="person">Christoph</span> + <span class="person">Peter Höbarth</span></strong><br/>
+<span class="person">Peter Höbarth</span> und <span class="person">Heinz Sohler</span> entfallen. <span class="person">Peter</span> sucht aktiv Ersatz für ein weiteres Fundraising-„Then"-Statement. Aktueller Stand: <span class="person">Walter</span> bringt nur Pflastersteine + Gamsen.
 </div>
 </div>
 <!-- ===================== PROJEKT 4 ===================== -->
@@ -704,7 +727,7 @@ Sie spielt jetzt für uns: Johann Strauß – ‚Unter Donner und Blitz', op. 32
 <div class="ankuendigung">
 <span class="label">🎙️ Anmoderation (<span class="person">Christoph</span>)</span>
 <span class="speech">„Sport heißt für uns auch: gemeinsam unterwegs sein, Generationen verbinden. Mit dem <strong>Alpenverein</strong> haben wir eine <strong>Old &amp; Young Wanderung</strong> ins Leben gerufen – ein Format, das genau den Bogen ‚Then &amp; Now' in Bewegung übersetzt."</span>
-<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📋 TODO: Ansprechpartner:innen vom Alpenverein für die Befragung vorab abstimmen (Name(n), Funktion, Kurzbio).</div>
+<div class="todo">📋 TODO: Ansprechpartner:innen vom Alpenverein für die Befragung vorab abstimmen (Name(n), Funktion, Kurzbio).</div>
 </div>
 <ol class="questions">
 <li>Wie ist die <strong>Old &amp; Young Wanderung</strong> mit dem Alpenverein entstanden – wer hatte die Idee, und was war das Ziel?</li>
@@ -766,7 +789,7 @@ Sie spielt jetzt für uns: Johann Strauß – ‚Unter Donner und Blitz', op. 32
 <div class="ankuendigung">
 <span class="label">🪜 Geehrte langsam auf die Bühne bitten (<span class="person">Christoph</span> / <span class="person">Hedy</span>)</span>
 <span class="speech"><strong>Vor</strong> der Münzpräsentation werden die <strong>4 Paul-Harris-Empfänger</strong> einzeln namentlich – <strong>jeweils mit Begleitperson</strong> – <em>in ruhigem Tempo</em> auf die Bühne gebeten. Sie nehmen seitlich Aufstellung und bleiben dort während der Münzpräsentation.</span>
-<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📋 TODO: Reihenfolge der Aufrufe + Stehposition auf der Bühne vorab abstimmen.</div>
+<div class="todo">📋 TODO: Reihenfolge der Aufrufe + Stehposition auf der Bühne vorab abstimmen.</div>
 </div>
 <div class="ankuendigung">
 <span class="label">🎙️ Anmoderation Münzen-Vorstellung (<span class="person">Christoph</span>)</span>
@@ -778,7 +801,7 @@ Sie spielt jetzt für uns: Johann Strauß – ‚Unter Donner und Blitz', op. 32
 <span class="speech">1. <strong><span class="person">Reini Pirchl</span> stellt die Münze von der Bühne vor</strong> – Idee, Motiv, Prägung, Anzahl (200 Stk Silbermünzen mit 60-Jahre-Motto / Altes &amp; Neues Logo).<br/><br/>
 2. <strong>Symbolische Übergabe durch die Präsidentin</strong>: <span class="person">Hedy Bendler</span> nimmt eine Münze von der Bühne, geht hinunter zu <span class="person">Günther Much</span> an seinen Tisch und überreicht sie ihm dort.<br/><br/>
 3. Die restlichen Münzen liegen an den Tischen / werden an Ehrengäste verteilt.<br/><br/>
-4. <strong><span class="person">Christoph</span> kommuniziert, wo die Münzen erworben werden können</strong> <span style="background:#FEF3C7; color:#92400E; font-size:0.78rem; padding:2px 8px; border-radius:4px; font-weight:700;">📋 TODO: Verkaufsstelle / Preis</span></span>
+4. <strong><span class="person">Christoph</span> kommuniziert, wo die Münzen erworben werden können</strong> <span class="todo-pill">📋 TODO: Verkaufsstelle / Preis</span></span>
 <div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Kameramann ist dabei – Low-Angle auf die Münze bei <span class="person">Reinis</span> Vorstellung, dann Schwenk zur Übergabe an <span class="person">Günther</span> am Tisch. Live-Einblendung auf der Leinwand.</div>
 </div>
 <div class="ankuendigung hand-off">
@@ -791,8 +814,8 @@ Sie spielt jetzt für uns: Johann Strauß – ‚Unter Donner und Blitz', op. 32
 1. <strong><span class="person">Walter</span> erklärt, WARUM diese Person die Auszeichnung erhält</strong> – Verdienste, Projekte, persönlicher Beitrag (2–3 Sätze).<br/>
 2. <strong><span class="person">Hedy</span></strong> überreicht Paul-Harris-Nadel und Urkunde auf der Bühne.<br/>
 3. Foto, kurzer Applaus.</span>
-<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📷 Keine Live-Kamera – nur professionelles Foto pro Person.<br/>
-📋 TODO: Namen der 4 Ausgezeichneten + jeweilige Begleitperson + Walters Begründungstexte (2–3 Sätze pro Person) vorab abstimmen und hier ergänzen.</div>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📷 Keine Live-Kamera – nur professionelles Foto pro Person.</div>
+<div class="todo">📋 TODO: Namen der 4 Ausgezeichneten + jeweilige Begleitperson + <span class="person">Walter</span>s Begründungstexte (2–3 Sätze pro Person) vorab abstimmen und hier ergänzen.</div>
 </div>
 <div class="ankuendigung hand-off">
 <span class="label">🎙️ Verabschiedung &amp; Aufruf zum Kuchen (<span class="person">Hedy</span>)</span>
@@ -803,8 +826,8 @@ Sie spielt jetzt für uns: Johann Strauß – ‚Unter Donner und Blitz', op. 32
 <span class="speech">Nach der Verabschiedung kommen alle Präsidentinnen und Präsidenten, der Governor und die Rotaracter:innen zusammen auf die Bühne (oder zur Kuchen-Station) und <strong>schneiden gemeinsam den 60-Jahre-Jubiläumskuchen an</strong>.<br/><br/>
 🎶 <strong>Der ganze Saal singt „Happy Birthday"</strong> – musikalische Begleitung durch <span class="person">Junko Philipp</span> oder die Rotaract-Band.<br/><br/>
 Sinnbildlich: Generationen vereint, Clubs vereint, Old &amp; Young – Then &amp; Now.</span>
-<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Kameramann fängt den gemeinsamen Anschnitt und das Singen live ein – Live-Einblendung auf der Leinwand, Gruppenfoto.<br/>
-📋 TODO: Kuchen rechtzeitig bereitstellen, Messer/Schaufel organisieren, Position vorab abstimmen. Klären, ob <span class="person">Junko</span> oder Band einsetzt.</div>
+<div style="font-size:0.85rem; color:var(--muted); margin-top:6px;">📹 Kameramann fängt den gemeinsamen Anschnitt und das Singen live ein – Live-Einblendung auf der Leinwand, Gruppenfoto.</div>
+<div class="todo">📋 TODO: Kuchen rechtzeitig bereitstellen, Messer/Schaufel organisieren, Position vorab abstimmen. Klären, ob <span class="person">Junko</span> oder Band einsetzt.</div>
 </div>
 </div>
 <div class="block">
