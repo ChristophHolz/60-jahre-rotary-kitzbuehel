@@ -844,18 +844,44 @@ Sinnbildlich: Generationen vereint, Clubs vereint, Old &amp; Young – Then &amp
   var filterEl = document.querySelector('.person-filter-inner');
   if (!filterEl) return;
 
+  var EXCLUDED_FIRST = ['Hedy', 'Christoph'];
+
   var names = new Set();
   document.querySelectorAll('span.person').forEach(function(el) {
     var n = el.textContent.trim();
     if (n) names.add(n);
   });
-  var sorted = Array.from(names).sort(function(a, b) { return a.localeCompare(b, 'de'); });
+  var allNames = Array.from(names);
+  var fullNames = allNames.filter(function(n) { return n.indexOf(' ') !== -1; });
 
-  sorted.forEach(function(name) {
+  // first-name → list of full names
+  var firstMap = {};
+  fullNames.forEach(function(full) {
+    var first = full.split(' ')[0];
+    (firstMap[first] = firstMap[first] || []).push(full);
+  });
+
+  function matchTermsFor(fullName) {
+    var terms = [fullName];
+    var first = fullName.split(' ')[0];
+    if (firstMap[first] && firstMap[first].length === 1) {
+      terms.push(first);
+    }
+    return terms;
+  }
+
+  var displayNames = fullNames.filter(function(full) {
+    var first = full.split(' ')[0];
+    return EXCLUDED_FIRST.indexOf(first) === -1;
+  });
+  displayNames.sort(function(a, b) { return a.localeCompare(b, 'de'); });
+
+  displayNames.forEach(function(name) {
     var btn = document.createElement('button');
     btn.className = 'person-btn';
     btn.type = 'button';
     btn.setAttribute('data-person', name);
+    btn.setAttribute('data-terms', matchTermsFor(name).join('|'));
     btn.textContent = name;
     filterEl.appendChild(btn);
   });
@@ -867,18 +893,21 @@ Sinnbildlich: Generationen vereint, Clubs vereint, Old &amp; Young – Then &amp
     if (!btn) return;
     filterEl.querySelectorAll('.person-btn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
-    applyFilter(btn.getAttribute('data-person'));
+    var terms = (btn.getAttribute('data-terms') || '').split('|').filter(Boolean);
+    applyFilter(btn.getAttribute('data-person'), terms);
   });
 
-  function hasPerson(el, name) {
+  function hasAnyTerm(el, terms) {
+    if (!terms.length) return false;
     var ps = el.querySelectorAll('span.person');
     for (var i = 0; i < ps.length; i++) {
-      if (ps[i].textContent.trim() === name) return true;
+      var t = ps[i].textContent.trim();
+      if (terms.indexOf(t) !== -1) return true;
     }
     return false;
   }
 
-  function applyFilter(name) {
+  function applyFilter(name, terms) {
     document.querySelectorAll('.block, .speaker').forEach(function(el) {
       el.style.display = '';
     });
@@ -887,12 +916,12 @@ Sinnbildlich: Generationen vereint, Clubs vereint, Old &amp; Young – Then &amp
 
     var anyVisible = false;
     document.querySelectorAll('.block').forEach(function(block) {
-      if (!hasPerson(block, name)) {
+      if (!hasAnyTerm(block, terms)) {
         block.style.display = 'none';
       } else {
         anyVisible = true;
         block.querySelectorAll('.speaker').forEach(function(spk) {
-          if (!hasPerson(spk, name)) spk.style.display = 'none';
+          if (!hasAnyTerm(spk, terms)) spk.style.display = 'none';
         });
       }
     });
