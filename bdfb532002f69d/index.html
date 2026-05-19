@@ -48,6 +48,43 @@
   .nav-inner { max-width: 920px; margin: 0 auto; padding: 0 24px; display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.9rem; }
   .nav a { color: var(--rotary-blue); text-decoration: none; font-weight: 500; }
   .nav a:hover { text-decoration: underline; }
+  .person-filter {
+    position: sticky; top: 47px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 0;
+    z-index: 9;
+    margin-bottom: 24px;
+  }
+  .person-filter-inner {
+    max-width: 920px; margin: 0 auto; padding: 0 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .person-filter-label { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-right: 6px; }
+  .person-btn {
+    background: white;
+    border: 1px solid var(--line);
+    color: var(--rotary-blue);
+    padding: 4px 11px;
+    border-radius: 16px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: 1.4;
+  }
+  .person-btn:hover { background: #F4F7FB; }
+  .person-btn.active { background: var(--rotary-blue); color: white; border-color: var(--rotary-blue); }
+  .filter-empty {
+    background: #FEF3C7;
+    border-left: 3px solid #92400E;
+    color: #92400E;
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 18px 0;
+    font-style: italic;
+  }
   .block {
     background: var(--card);
     border: 1px solid var(--line);
@@ -240,6 +277,12 @@
 <a href="#projekt2">Exchange</a>
 <a href="#projekt3">Fundraising</a>
 <a href="#projekt4">Sport</a>
+</div>
+</div>
+<div class="person-filter">
+<div class="person-filter-inner">
+<span class="person-filter-label">👤 Mein Teil:</span>
+<button class="person-btn active" data-person="" type="button">Alle</button>
 </div>
 </div>
 <div class="wrap">
@@ -773,5 +816,73 @@ Sinnbildlich: Generationen vereint, Clubs vereint, Old &amp; Young – Then &amp
     60 Jahre Rotary Club Kitzbühel · Stand 15.05.2026 · Moderation: <span class="person">Christoph Holz</span>
 </footer>
 </div>
+<script>
+(function() {
+  var filterEl = document.querySelector('.person-filter-inner');
+  if (!filterEl) return;
+
+  var names = new Set();
+  document.querySelectorAll('span.person').forEach(function(el) {
+    var n = el.textContent.trim();
+    if (n) names.add(n);
+  });
+  var sorted = Array.from(names).sort(function(a, b) { return a.localeCompare(b, 'de'); });
+
+  sorted.forEach(function(name) {
+    var btn = document.createElement('button');
+    btn.className = 'person-btn';
+    btn.type = 'button';
+    btn.setAttribute('data-person', name);
+    btn.textContent = name;
+    filterEl.appendChild(btn);
+  });
+
+  var emptyMsg = null;
+
+  filterEl.addEventListener('click', function(e) {
+    var btn = e.target.closest('.person-btn');
+    if (!btn) return;
+    filterEl.querySelectorAll('.person-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    applyFilter(btn.getAttribute('data-person'));
+  });
+
+  function hasPerson(el, name) {
+    var ps = el.querySelectorAll('span.person');
+    for (var i = 0; i < ps.length; i++) {
+      if (ps[i].textContent.trim() === name) return true;
+    }
+    return false;
+  }
+
+  function applyFilter(name) {
+    document.querySelectorAll('.block, .speaker').forEach(function(el) {
+      el.style.display = '';
+    });
+    if (emptyMsg) { emptyMsg.remove(); emptyMsg = null; }
+    if (!name) return;
+
+    var anyVisible = false;
+    document.querySelectorAll('.block').forEach(function(block) {
+      if (!hasPerson(block, name)) {
+        block.style.display = 'none';
+      } else {
+        anyVisible = true;
+        block.querySelectorAll('.speaker').forEach(function(spk) {
+          if (!hasPerson(spk, name)) spk.style.display = 'none';
+        });
+      }
+    });
+
+    if (!anyVisible) {
+      emptyMsg = document.createElement('div');
+      emptyMsg.className = 'filter-empty';
+      emptyMsg.textContent = 'Keine Auftritte für ' + name + ' im Ablauf gefunden.';
+      var wrap = document.querySelector('.wrap');
+      if (wrap) wrap.insertBefore(emptyMsg, wrap.firstChild);
+    }
+  }
+})();
+</script>
 </body>
 </html>
