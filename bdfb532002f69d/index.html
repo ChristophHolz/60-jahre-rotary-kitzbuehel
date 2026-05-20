@@ -277,6 +277,53 @@
     color: #C8102E;
     font-weight: 700;
   }
+
+  .view-toggle {
+    margin-left: auto;
+    background: var(--rotary-blue);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .view-toggle:hover { background: #0F347A; }
+  .view-toggle.active { background: #2F6E2A; }
+
+  body.slides-only header,
+  body.slides-only .legend,
+  body.slides-only .section-header,
+  body.slides-only .einstieg,
+  body.slides-only .ankuendigung,
+  body.slides-only .uebergang-out,
+  body.slides-only .speaker,
+  body.slides-only .questions,
+  body.slides-only .notfall,
+  body.slides-only .who,
+  body.slides-only .todo,
+  body.slides-only .todo-pill,
+  body.slides-only .person-filter,
+  body.slides-only footer,
+  body.slides-only .wrap > img,
+  body.slides-only .nav a {
+    display: none !important;
+  }
+  body.slides-only .block:not(:has(.folien)) {
+    display: none !important;
+  }
+  body.slides-only .block {
+    padding: 14px 18px;
+  }
+  body.slides-only .block > .time,
+  body.slides-only .block > .title {
+    font-size: 1rem;
+  }
+  body.slides-only .folien {
+    margin-top: 8px;
+  }
 </style>
 </head>
 <body>
@@ -297,6 +344,7 @@
 <a href="#projekt2">Exchange</a>
 <a href="#projekt3">Fundraising</a>
 <a href="#projekt4">Sport</a>
+<button type="button" class="view-toggle" id="toggleFolien" onclick="document.body.classList.toggle('slides-only'); this.classList.toggle('active'); this.textContent = document.body.classList.contains('slides-only') ? '📋 Vollansicht' : '📊 Nur Folien';">📊 Nur Folien</button>
 </div>
 </div>
 <div class="person-filter">
