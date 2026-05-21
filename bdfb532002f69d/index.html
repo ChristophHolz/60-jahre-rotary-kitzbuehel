@@ -299,7 +299,7 @@
   body.slides-only .einstieg,
   body.slides-only .ankuendigung,
   body.slides-only .uebergang-out,
-  body.slides-only .speaker,
+  body.slides-only .speaker-name,
   body.slides-only .questions,
   body.slides-only .notfall,
   body.slides-only .who,
@@ -309,6 +309,18 @@
   body.slides-only footer,
   body.slides-only .wrap > img,
   body.slides-only .nav a {
+    display: none !important;
+  }
+  body.slides-only .speaker {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+  body.slides-only .speaker > p,
+  body.slides-only .speaker .role,
+  body.slides-only .speaker .badge {
     display: none !important;
   }
   body.slides-only .block:not(:has(.folien)) {
